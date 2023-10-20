@@ -20,12 +20,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] List<AudioClip> footStepSounds = new List<AudioClip>();
     [SerializeField] AudioClip jumpSound;
     [SerializeField] AudioClip landSound;
-
+    [SerializeField] float health = 100f;
+    [SerializeField] int damage = 2;
     private CharacterController characterController;
-
+    
     private float currentSpeed = 8f;
     private float horizontalInput;
     private float verticalInput;
+    [SerializeField] private PanelController panelController;
 
     private Vector3 heightMovement;
 
@@ -43,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-
+        
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -138,13 +140,13 @@ public class PlayerMovement : MonoBehaviour
         {
             if (currentSpeed == walkSpeed)
             {
-                Debug.Log(1);
+                
                 animator.SetBool("Walk", true);
                 animator.SetBool("Run", false);
             }
             else if (currentSpeed == runSpeed)
             {
-                Debug.Log(2);
+                
                 animator.SetBool("Run", true);
                 animator.SetBool("Walk", false);
             }
@@ -204,4 +206,26 @@ public class PlayerMovement : MonoBehaviour
         return new Vector2(invertX ? -Mouse.current.delta.x.ReadValue() : Mouse.current.delta.x.ReadValue(),
              invertY ? -Mouse.current.delta.y.ReadValue() : Mouse.current.delta.x.ReadValue()) * mouseSensivity;
     }
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+        if (health <= 0f)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        panelController.LosePanel();
+        Destroy(gameObject);
+    }
+
+    public int GetDamage()
+    {
+        return damage;
+    }
+
+
 }

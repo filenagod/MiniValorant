@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5026284160863a64b9e1c080d2b85a97, type: 3}
   m_Name: Sherif
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
-  damage: 100
+  weaponPrefab: {fileID: 2707082904337873617, guid: 754a4ffae0390a348b5d077216abcde0, type: 3}
+  animatorOverride: {fileID: 22100000, guid: 2e5715e92d8152240b868fca63c4b7ce, type: 2}
+  damage: 50
   attackRate: 0.2
+  positionOffset: {x: 0, y: 0, z: 0}
+  scaleOffset: {x: 0, y: 0, z: 0}

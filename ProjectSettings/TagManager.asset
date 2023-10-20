@@ -6,15 +6,18 @@ TagManager:
   tags:
   - CameraPoint
   - Enemy
+  - FxTemporaire
+  - Other
+  - PanelGame
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Shootable
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

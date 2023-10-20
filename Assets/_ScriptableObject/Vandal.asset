@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5026284160863a64b9e1c080d2b85a97, type: 3}
   m_Name: Vandal
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
-  damage: 5
-  attackRate: 2
+  weaponPrefab: {fileID: 3479541259047914602, guid: b2dbac57a0335b5458e2a6e382a1c292, type: 3}
+  animatorOverride: {fileID: 22100000, guid: c96224c413305574e9e052a784b4952f, type: 2}
+  damage: 6
+  attackRate: 0.5
+  positionOffset: {x: 0, y: 0, z: 0}
+  scaleOffset: {x: 0, y: 0, z: 0}
